@@ -1,0 +1,1235 @@
+2025-09-24 17:49:08,450 Worker rq:worker:15f0d03de24d4502b44f067d49a6587f started with PID 59601, version 2.4.0
+2025-09-24 17:49:08,451 Subscribing to channel rq:pubsub:15f0d03de24d4502b44f067d49a6587f
+2025-09-24 17:49:08,457 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 17:49:08,460 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 17:49:08,465 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 17:49:08,480 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 17:50:42,439 Worker 15f0d03de24d4502b44f067d49a6587f [PID 59601]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+2025-09-24 17:53:42,107 Worker rq:worker:467c83007b5f4ca3a732507bddaed212 started with PID 59875, version 2.4.0
+2025-09-24 17:53:42,107 Subscribing to channel rq:pubsub:467c83007b5f4ca3a732507bddaed212
+2025-09-24 17:53:42,109 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 17:53:42,111 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 17:53:42,115 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 17:53:42,117 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:03:43,275 Worker 467c83007b5f4ca3a732507bddaed212 [PID 59875]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+2025-09-24 18:04:56,960 Worker rq:worker:0e0d4ba9aef94ab2975608a140a96545 started with PID 61136, version 2.4.0
+2025-09-24 18:04:56,961 Subscribing to channel rq:pubsub:0e0d4ba9aef94ab2975608a140a96545
+2025-09-24 18:04:56,963 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:04:56,964 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:04:56,967 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:04:56,970 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:06:13,247 Worker 0e0d4ba9aef94ab2975608a140a96545 [PID 61136]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:08:00,306 Worker rq:worker:1d5742b0ce0e402bbcff6d7a8db4e127 started with PID 61330, version 2.4.0
+2025-09-24 18:08:00,307 Subscribing to channel rq:pubsub:1d5742b0ce0e402bbcff6d7a8db4e127
+2025-09-24 18:08:00,312 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:08:00,313 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:08:00,318 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:08:00,323 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:08:05,221 Worker 1d5742b0ce0e402bbcff6d7a8db4e127 [PID 61330]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+2025-09-24 18:08:16,577 Worker rq:worker:4abb43393d8c4a5f8cfed7e8c947c1b4 started with PID 61378, version 2.4.0
+2025-09-24 18:08:16,577 Subscribing to channel rq:pubsub:4abb43393d8c4a5f8cfed7e8c947c1b4
+2025-09-24 18:08:16,579 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:08:16,580 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:08:16,584 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:08:16,587 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:11:59,335 Worker 4abb43393d8c4a5f8cfed7e8c947c1b4 [PID 61378]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:18:52,938 Worker rq:worker:26c33d6dce8a4e90aaa00b33e277b54a started with PID 66597, version 2.4.0
+2025-09-24 18:18:52,939 Subscribing to channel rq:pubsub:26c33d6dce8a4e90aaa00b33e277b54a
+2025-09-24 18:18:52,944 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:18:52,946 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:18:52,952 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:18:52,959 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:25:24,829 Worker 26c33d6dce8a4e90aaa00b33e277b54a [PID 66597]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:26:28,811 Worker rq:worker:c1056d75a3c1482bab9f8abcba14f0d6 started with PID 67617, version 2.4.0
+2025-09-24 18:26:28,811 Subscribing to channel rq:pubsub:c1056d75a3c1482bab9f8abcba14f0d6
+2025-09-24 18:26:28,813 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:26:28,814 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:26:28,821 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:26:28,824 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:28:35,349 Worker c1056d75a3c1482bab9f8abcba14f0d6 [PID 67617]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:32:01,379 Worker rq:worker:9d80204adbfc4ce69a42de441a28bc30 started with PID 67809, version 2.4.0
+2025-09-24 18:32:01,379 Subscribing to channel rq:pubsub:9d80204adbfc4ce69a42de441a28bc30
+2025-09-24 18:32:01,383 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:32:01,384 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:32:01,388 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:32:01,391 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:38:32,769 Worker 9d80204adbfc4ce69a42de441a28bc30 [PID 67809]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:38:48,910 Worker rq:worker:f0246514046b47e9bd5eb333f7343135 started with PID 68841, version 2.4.0
+2025-09-24 18:38:48,910 Subscribing to channel rq:pubsub:f0246514046b47e9bd5eb333f7343135
+2025-09-24 18:38:48,912 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:38:48,913 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:38:48,920 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:38:48,923 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:42:43,257 Worker f0246514046b47e9bd5eb333f7343135 [PID 68841]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:44:48,371 Worker rq:worker:35da9e95e0b2487cad765f679e4a1d8b started with PID 69138, version 2.4.0
+2025-09-24 18:44:48,371 Subscribing to channel rq:pubsub:35da9e95e0b2487cad765f679e4a1d8b
+2025-09-24 18:44:48,373 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:44:48,374 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:44:48,378 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:44:48,380 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:47:31,793 Worker 35da9e95e0b2487cad765f679e4a1d8b [PID 69138]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+
+Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-24 18:47:38,767 Worker rq:worker:0efdeb1282ad40e9a21c0b21248f2468 started with PID 69274, version 2.4.0
+2025-09-24 18:47:38,767 Subscribing to channel rq:pubsub:0efdeb1282ad40e9a21c0b21248f2468
+2025-09-24 18:47:38,771 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:47:38,772 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:47:38,779 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:47:38,785 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 18:54:47,821 Worker 0efdeb1282ad40e9a21c0b21248f2468 [PID 69274]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+2025-09-24 18:56:55,223 Worker rq:worker:4ae91f8b3d90488599e0af1614ae8925 started with PID 69650, version 2.4.0
+2025-09-24 18:56:55,223 Subscribing to channel rq:pubsub:4ae91f8b3d90488599e0af1614ae8925
+2025-09-24 18:56:55,228 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 18:56:55,229 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 18:56:55,235 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 18:56:55,238 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 19:03:45,943 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User Administrator>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='meeting.localhost', user='Administrator') (meeting.localhost||d1ce4b11-8ad7-4145-a59b-469a25935a8f)
+2025-09-24 19:03:46,836 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.user.user.create_contact', kwargs={'user': <User: doctype=User Administrator>, 'ignore_mandatory': True}, method='frappe.core.doctype.user.user.create_contact', site='meeting.localhost', user='Administrator') job in 0:00:00.126948s on worker 4ae91f8b3d90488599e0af1614ae8925
+2025-09-24 19:03:46,836 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||d1ce4b11-8ad7-4145-a59b-469a25935a8f)
+2025-09-24 19:03:46,837 Result is kept for 600 seconds
+2025-09-24 19:06:31,462 Worker 4ae91f8b3d90488599e0af1614ae8925 [PID 69650]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+2025-09-24 19:07:36,590 Worker rq:worker:2ccfbacff3d74d05b7a5113d1c74a2bb started with PID 70754, version 2.4.0
+2025-09-24 19:07:36,590 Subscribing to channel rq:pubsub:2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 19:07:36,593 *** Listening on Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default, Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long...
+2025-09-24 19:07:36,595 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 19:07:36,598 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 19:07:36,604 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 19:21:06,762 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 19:21:06,775 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 19:21:06,780 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 19:34:26,019 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 19:34:26,135 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 19:34:26,144 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 20:20:57,028 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 20:20:57,040 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 20:20:57,044 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 20:24:20,487 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.utils.delete_old_exported_report_files', 'schedul..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5pkvhn52g)
+2025-09-24 20:24:46,629 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.utils.delete_old_exported_report_files', 'schedul..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:25.793817s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:24:46,631 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5pkvhn52g)
+2025-09-24 20:24:46,632 Result is kept for 600 seconds
+2025-09-24 20:24:46,661 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oeti19no)
+2025-09-24 20:24:54,691 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:07.936999s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:24:54,693 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oeti19no)
+2025-09-24 20:24:54,693 Result is kept for 600 seconds
+2025-09-24 20:24:54,717 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5ok27q8in)
+2025-09-24 20:24:56,961 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.219292s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:24:56,961 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5ok27q8in)
+2025-09-24 20:24:56,962 Result is kept for 600 seconds
+2025-09-24 20:24:56,985 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:25:01,634 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:04.622644s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:01,635 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:25:01,636 Result is kept for 600 seconds
+2025-09-24 20:25:01,665 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.pulse.client.send_queued_events', 'scheduled_job_type'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oda3ues8)
+2025-09-24 20:25:06,079 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.pulse.client.send_queued_events', 'scheduled_job_type'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:04.382887s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:06,080 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oda3ues8)
+2025-09-24 20:25:06,080 Result is kept for 600 seconds
+2025-09-24 20:25:06,101 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oq2c6ns6)
+2025-09-24 20:25:09,041 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.912678s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:09,042 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oq2c6ns6)
+2025-09-24 20:25:09,043 Result is kept for 600 seconds
+2025-09-24 20:25:09,066 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o1jv1msi)
+2025-09-24 20:25:13,331 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:04.237670s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:13,333 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o1jv1msi)
+2025-09-24 20:25:13,334 Result is kept for 600 seconds
+2025-09-24 20:25:13,358 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o0583ha2)
+2025-09-24 20:25:16,164 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.779307s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:16,164 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o0583ha2)
+2025-09-24 20:25:16,165 Result is kept for 600 seconds
+2025-09-24 20:25:16,183 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:25:17,725 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.525819s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:17,725 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:25:17,726 Result is kept for 600 seconds
+2025-09-24 20:25:17,742 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:25:19,251 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.493735s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:19,253 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:25:19,253 Result is kept for 600 seconds
+2025-09-24 20:25:19,272 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'k5..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5ogvaan45)
+2025-09-24 20:25:21,441 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'k5..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.139376s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:21,442 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5ogvaan45)
+2025-09-24 20:25:21,443 Result is kept for 600 seconds
+2025-09-24 20:25:21,471 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:25:25,772 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:04.269506s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:25,774 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:25:25,775 Result is kept for 600 seconds
+2025-09-24 20:25:25,944 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o8jcihoc)
+2025-09-24 20:25:29,197 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:03.215113s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:29,197 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o8jcihoc)
+2025-09-24 20:25:29,198 Result is kept for 600 seconds
+2025-09-24 20:25:29,216 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5od1abvvs)
+2025-09-24 20:25:30,883 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.651855s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:30,883 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5od1abvvs)
+2025-09-24 20:25:30,884 Result is kept for 600 seconds
+2025-09-24 20:25:30,902 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.web_page.web_page.check_publish_status..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5p5mnm812)
+2025-09-24 20:25:33,024 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.web_page.web_page.check_publish_status..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.098936s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:33,028 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5p5mnm812)
+2025-09-24 20:25:33,029 Result is kept for 600 seconds
+2025-09-24 20:25:33,057 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.page.backups.backups.delete_downloadable_backups'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oft5mhfs)
+2025-09-24 20:25:34,796 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.page.backups.backups.delete_downloadable_backups'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.718953s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:34,797 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5oft5mhfs)
+2025-09-24 20:25:34,797 Result is kept for 600 seconds
+2025-09-24 20:25:34,811 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.form.document_follow.send_hourly_updates', 'sched..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5os5rbu80)
+2025-09-24 20:25:36,171 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.desk.form.document_follow.send_hourly_updates', 'sched..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.344498s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:36,172 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5os5rbu80)
+2025-09-24 20:25:36,173 Result is kept for 600 seconds
+2025-09-24 20:25:36,188 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.core.doctype.prepared_report.prepared_report.expire_st..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5pfdk26uv)
+2025-09-24 20:25:37,506 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.core.doctype.prepared_report.prepared_report.expire_st..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.301591s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:37,507 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5pfdk26uv)
+2025-09-24 20:25:37,507 Result is kept for 600 seconds
+2025-09-24 20:25:37,524 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.oauth.delete_oauth2_data', 'scheduled_job_type': 'k5pb..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5pbh0igrg)
+2025-09-24 20:25:38,960 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.oauth.delete_oauth2_data', 'scheduled_job_type': 'k5pb..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.419458s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:38,960 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5pbh0igrg)
+2025-09-24 20:25:38,961 Result is kept for 600 seconds
+2025-09-24 20:25:38,976 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.personal_data_deletion_request.persona..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5ofv39erg)
+2025-09-24 20:25:40,379 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.website.doctype.personal_data_deletion_request.persona..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.387000s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:40,379 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5ofv39erg)
+2025-09-24 20:25:40,380 Result is kept for 600 seconds
+2025-09-24 20:25:40,397 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.user_settings.sync_user_settings', 'schedu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o61i714r)
+2025-09-24 20:25:41,720 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.user_settings.sync_user_settings', 'schedu..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.305049s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:41,721 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5o61i714r)
+2025-09-24 20:25:41,721 Result is kept for 600 seconds
+2025-09-24 20:25:41,737 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.twofactor.delete_all_barcodes_for_users', 'scheduled_j..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5pe2bsst1)
+2025-09-24 20:25:43,045 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.twofactor.delete_all_barcodes_for_users', 'scheduled_j..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.292022s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:25:43,046 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long: Job OK (meeting.localhost||scheduled_job||k5pe2bsst1)
+2025-09-24 20:25:43,046 Result is kept for 600 seconds
+2025-09-24 20:28:01,046 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:28:03,226 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.154514s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:28:03,226 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:28:03,227 Result is kept for 600 seconds
+2025-09-24 20:28:03,239 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:28:04,807 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.549897s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:28:04,808 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:28:04,808 Result is kept for 600 seconds
+2025-09-24 20:28:04,824 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:28:06,115 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.275964s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:28:06,115 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:28:06,116 Result is kept for 600 seconds
+2025-09-24 20:28:06,130 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:28:07,802 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.654915s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:28:07,803 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:28:07,803 Result is kept for 600 seconds
+2025-09-24 20:32:00,195 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oq2c6ns6)
+2025-09-24 20:32:02,376 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.automation.doctype.reminder.reminder.send_reminders', ..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:02.158637s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:02,377 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oq2c6ns6)
+2025-09-24 20:32:02,377 Result is kept for 600 seconds
+2025-09-24 20:32:02,389 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 20:32:02,392 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 20:32:02,394 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 20:32:02,397 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o8jcihoc)
+2025-09-24 20:32:03,294 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.model.utils.link_count.update_link_count', 'scheduled_..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.883983s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:03,295 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o8jcihoc)
+2025-09-24 20:32:03,295 Result is kept for 600 seconds
+2025-09-24 20:32:03,310 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:32:04,357 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.monitor.flush', 'scheduled_job_type': 'k5oqh1cq6u'}, method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.034586s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:04,358 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oqh1cq6u)
+2025-09-24 20:32:04,358 Result is kept for 600 seconds
+2025-09-24 20:32:04,371 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o1jv1msi)
+2025-09-24 20:32:05,282 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.notification.notification.trigger_offset..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.898453s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:05,283 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o1jv1msi)
+2025-09-24 20:32:05,283 Result is kept for 600 seconds
+2025-09-24 20:32:05,296 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oeti19no)
+2025-09-24 20:32:06,193 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.utils.global_search.sync_global_search', 'scheduled_jo..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.877948s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:06,193 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oeti19no)
+2025-09-24 20:32:06,194 Result is kept for 600 seconds
+2025-09-24 20:32:06,205 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:32:07,120 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.retry_sending_emails', 'scheduled_job_type..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.901503s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:07,121 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omdt460v)
+2025-09-24 20:32:07,121 Result is kept for 600 seconds
+2025-09-24 20:32:07,134 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5o0583ha2)
+2025-09-24 20:32:08,178 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.pull', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.030369s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:08,178 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5o0583ha2)
+2025-09-24 20:32:08,179 Result is kept for 600 seconds
+2025-09-24 20:32:08,194 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5od1abvvs)
+2025-09-24 20:32:09,360 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.search.sqlite_search.build_index_if_not_exists', 'sche..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.148978s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:09,360 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5od1abvvs)
+2025-09-24 20:32:09,361 Result is kept for 600 seconds
+2025-09-24 20:32:09,376 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:32:10,369 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.queue.flush', 'scheduled_job_type': 'k5oflis3rb'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.980163s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:10,370 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oflis3rb)
+2025-09-24 20:32:10,370 Result is kept for 600 seconds
+2025-09-24 20:32:10,382 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.pulse.client.send_queued_events', 'scheduled_job_type'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5oda3ues8)
+2025-09-24 20:32:11,294 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.pulse.client.send_queued_events', 'scheduled_job_type'..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.894105s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:11,295 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5oda3ues8)
+2025-09-24 20:32:11,295 Result is kept for 600 seconds
+2025-09-24 20:32:11,364 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:32:12,876 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.integrations.doctype.google_calendar.google_calendar.s..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.455711s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:12,876 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5omlk62sa)
+2025-09-24 20:32:12,876 Result is kept for 600 seconds
+2025-09-24 20:32:12,890 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5ok27q8in)
+2025-09-24 20:32:13,981 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.email.doctype.email_account.email_account.notify_unrep..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:01.077675s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:13,982 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5ok27q8in)
+2025-09-24 20:32:13,982 Result is kept for 600 seconds
+2025-09-24 20:32:13,994 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'k5..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') (meeting.localhost||scheduled_job||k5ogvaan45)
+2025-09-24 20:32:14,899 Successfully completed frappe.utils.background_jobs.execute_job(event=None, is_async=True, job_name='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., kwargs={'job_type': 'frappe.deferred_insert.save_to_db', 'scheduled_job_type': 'k5..., method='frappe.core.doctype.scheduled_job_type.scheduled_job_type.run_scheduled_jo..., site='meeting.localhost', user='Administrator') job in 0:00:00.889657s on worker 2ccfbacff3d74d05b7a5113d1c74a2bb
+2025-09-24 20:32:14,899 Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default: Job OK (meeting.localhost||scheduled_job||k5ogvaan45)
+2025-09-24 20:32:14,899 Result is kept for 600 seconds
+2025-09-24 20:45:06,077 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:short
+2025-09-24 20:45:06,157 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:default
+2025-09-24 20:45:06,208 Cleaning registries for queue: Users-addisutedla-Documents-Projects-Meeting-meeting-bench:long
+2025-09-24 20:47:22,541 Worker 2ccfbacff3d74d05b7a5113d1c74a2bb [PID 70754]: warm shut down requested
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 644, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 158, in read_response
+    self.read_from_socket()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/bench_helper.py", line 48, in invoke
+    return super().invoke(ctx)
+           ~~~~~~~~~~~~~~^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1830, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+                           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 1226, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/click/core.py", line 794, in invoke
+    return callback(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/commands/scheduler.py", line 206, in start_worker
+    start_worker(
+    ~~~~~~~~~~~~^
+    	queue,
+     ^^^^^^
+    ...<4 lines>...
+    	strategy=strategy,
+     ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 352, in start_worker
+    worker.work(
+    ~~~~~~~~~~~^
+    	logging_level=logging_level,
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+    	with_scheduler=False,
+     ^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 646, in work
+    self.teardown()
+    ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 1147, in teardown
+    self.register_death()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py", line 894, in register_death
+    p.execute()
+    ~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 1607, in execute
+    conn = self.connection_pool.get_connection()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1530, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 517, in on_connect_check_health
+    self.read_response()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')
+
+Error while reading from 127.0.0.1:11000 : (54, 'Connection reset by peer')

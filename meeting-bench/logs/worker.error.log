@@ -1,0 +1,93 @@
+2025-09-24 17:50:42,505 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:03:43,376 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:06:13,324 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:08:05,256 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:11:59,399 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:25:24,904 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:28:35,464 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:38:32,833 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:42:43,281 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:47:31,839 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+2025-09-24 18:54:47,909 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=69650) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-09-24 19:06:31,527 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/worker.py:1302: DeprecationWarning: This process (pid=70754) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  child_pid = os.fork()
+2025-09-24 20:47:22,662 Could not connect to Redis instance: Error 61 connecting to 127.0.0.1:11000. Connection refused. Retrying in 2 seconds...

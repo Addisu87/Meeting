@@ -1,0 +1,10 @@
+2025-09-24 19:03:45,913 INFO ipython === bench console session ===
+2025-09-24 19:03:45,915 INFO ipython # Replace 'Admin87' with your desired password
+import frappe
+frappe.init(site='meeting.localhost')
+frappe.connect()
+frappe.get_doc("User", "Administrator").new_password = "Admin87"
+frappe.get_doc("User", "Administrator").save()
+frappe.db.commit()
+exit()
+2025-09-24 19:03:45,915 INFO ipython === session end ===

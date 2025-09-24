@@ -1,0 +1,10 @@
+{
+ "db_host": "localhost",
+ "db_name": "meetingdb",
+ "db_password": "meeting87",
+ "db_port": 5432,
+ "db_type": "postgres",
+ "db_user": "meetingdb",
+ "developer_mode": 1,
+ "host_name": "http://meeting.localhost:8000"
+}
