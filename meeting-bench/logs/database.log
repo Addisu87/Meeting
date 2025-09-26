@@ -1803,3 +1803,298 @@ parent varchar(140),
 parentfield varchar(140),
 parenttype varchar(140)
 			)
+2025-09-25 11:31:42,942 WARNING database DDL Query made to DB:
+create table "tabMeeting" (
+			name varchar(140) primary key,
+			creation timestamp(6),
+			modified timestamp(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus smallint not null default '0',
+			idx bigint not null default '0',
+			"_user_tags" text,
+"_comments" text,
+"_assign" text,
+"_liked_by" text
+			)
+2025-09-25 11:48:16,740 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ADD COLUMN "title" varchar(140)
+2025-09-25 11:50:10,769 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ADD COLUMN "date" date, ADD COLUMN "from_time" time(6), ADD COLUMN "to_time" time(6), ADD COLUMN "status" varchar(140)
+2025-09-25 11:50:10,774 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 11:52:02,638 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 11:52:02,640 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 11:57:26,891 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 11:57:26,894 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:01:53,724 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:01:53,726 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:10:37,767 WARNING database DDL Query made to DB:
+create table "tabMeeting Agenda" (
+			name varchar(140) primary key,
+			creation timestamp(6),
+			modified timestamp(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus smallint not null default '0',
+			idx bigint not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140)
+			)
+2025-09-25 12:13:11,571 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:13:11,574 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:17:50,935 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:17:50,937 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:18:08,229 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:18:08,232 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:19:14,600 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:19:14,603 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:19:31,369 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:19:31,372 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:42:38,246 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 12:42:38,250 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 12:46:40,982 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parent varchar(140)
+2025-09-25 12:46:40,987 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parenttype varchar(140)
+2025-09-25 12:46:40,989 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parentfield varchar(140)
+2025-09-25 12:46:41,080 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting Agenda" ADD COLUMN "description" text
+2025-09-25 12:46:54,257 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parent varchar(140)
+2025-09-25 12:46:54,261 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parenttype varchar(140)
+2025-09-25 12:46:54,263 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parentfield varchar(140)
+2025-09-25 12:47:33,347 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parent varchar(140)
+2025-09-25 12:47:33,350 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parenttype varchar(140)
+2025-09-25 12:47:33,352 WARNING database DDL Query made to DB:
+alter table "tabMeeting Agenda" add column if not exists parentfield varchar(140)
+2025-09-25 12:49:20,688 WARNING database DDL Query made to DB:
+create table "tabMinutees" (
+			name varchar(140) primary key,
+			creation timestamp(6),
+			modified timestamp(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus smallint not null default '0',
+			idx bigint not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140)
+			)
+2025-09-25 12:59:46,239 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 12:59:46,243 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 12:59:46,245 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 12:59:46,344 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMinutees" ADD COLUMN "action" varchar(140), ADD COLUMN "assigned_to" varchar(140)
+2025-09-25 12:59:46,348 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "assigned_to" ON "tabMinutees"("assigned_to");
+2025-09-25 16:05:15,270 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:05:15,284 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:05:47,341 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:05:47,343 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:25:29,213 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:25:29,218 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:25:29,221 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:25:29,341 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMinutees" ADD COLUMN "completed_by" date
+2025-09-25 16:26:06,282 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:26:06,285 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:26:06,288 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:26:06,391 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMinutees" ADD COLUMN "description" text
+2025-09-25 16:26:21,482 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:26:21,484 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:26:21,487 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:27:23,456 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:27:23,459 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:27:23,462 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:27:23,580 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMinutees" ADD COLUMN "status" varchar(140)
+2025-09-25 16:27:33,208 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:27:33,211 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:27:33,214 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:28:24,383 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parent varchar(140)
+2025-09-25 16:28:24,385 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parenttype varchar(140)
+2025-09-25 16:28:24,388 WARNING database DDL Query made to DB:
+alter table "tabMinutees" add column if not exists parentfield varchar(140)
+2025-09-25 16:28:24,504 WARNING database DDL Query made to DB:
+DROP INDEX IF EXISTS "assigned_to" ;
+2025-09-25 16:29:21,303 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMinutees" RENAME TO "tabMeeting Minutes"
+2025-09-25 16:31:17,718 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:31:17,719 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:31:45,222 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:31:45,223 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:33:00,072 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:33:00,073 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:37:02,824 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:37:02,825 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:39:26,662 WARNING database DDL Query made to DB:
+create table "tabAttendee" (
+			name varchar(140) primary key,
+			creation timestamp(6),
+			modified timestamp(6),
+			modified_by varchar(140),
+			owner varchar(140),
+			docstatus smallint not null default '0',
+			idx bigint not null default '0',
+			parent varchar(140),
+parentfield varchar(140),
+parenttype varchar(140)
+			)
+2025-09-25 16:41:15,253 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parent varchar(140)
+2025-09-25 16:41:15,255 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parenttype varchar(140)
+2025-09-25 16:41:15,257 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parentfield varchar(140)
+2025-09-25 16:41:15,354 WARNING database DDL Query made to DB:
+ALTER TABLE "tabAttendee" ADD COLUMN "attendee" varchar(140), ADD COLUMN "full_name" varchar(140)
+2025-09-25 16:43:11,787 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parent varchar(140)
+2025-09-25 16:43:11,790 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parenttype varchar(140)
+2025-09-25 16:43:11,793 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parentfield varchar(140)
+2025-09-25 16:43:11,890 WARNING database DDL Query made to DB:
+ALTER TABLE "tabAttendee" ADD COLUMN "accepted" smallint NOT NULL DEFAULT 0
+2025-09-25 16:44:05,593 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parent varchar(140)
+2025-09-25 16:44:05,596 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parenttype varchar(140)
+2025-09-25 16:44:05,599 WARNING database DDL Query made to DB:
+alter table "tabAttendee" add column if not exists parentfield varchar(140)
+2025-09-25 16:44:05,740 WARNING database DDL Query made to DB:
+ALTER TABLE "tabAttendee" ADD COLUMN "attended" smallint NOT NULL DEFAULT 0
+2025-09-25 16:45:56,876 WARNING database DDL Query made to DB:
+ALTER TABLE "tabAttendee" RENAME TO "tabMeeting Attendee"
+2025-09-25 16:46:29,528 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parent varchar(140)
+2025-09-25 16:46:29,530 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parenttype varchar(140)
+2025-09-25 16:46:29,532 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parentfield varchar(140)
+2025-09-25 16:46:44,529 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parent varchar(140)
+2025-09-25 16:46:44,532 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parenttype varchar(140)
+2025-09-25 16:46:44,534 WARNING database DDL Query made to DB:
+alter table "tabMeeting Attendee" add column if not exists parentfield varchar(140)
+2025-09-25 16:47:32,545 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:47:32,546 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:49:18,420 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:49:18,421 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:50:51,092 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:50:51,093 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:53:01,645 WARNING database DDL Query made to DB:
+alter table "tabMeeting Minutes" add column if not exists parent varchar(140)
+2025-09-25 16:53:01,648 WARNING database DDL Query made to DB:
+alter table "tabMeeting Minutes" add column if not exists parenttype varchar(140)
+2025-09-25 16:53:01,650 WARNING database DDL Query made to DB:
+alter table "tabMeeting Minutes" add column if not exists parentfield varchar(140)
+2025-09-25 16:54:29,098 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:54:29,099 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:55:29,812 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:55:29,814 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:55:46,680 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:55:46,681 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-25 16:56:28,619 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-25 16:56:28,620 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 10:16:38,569 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 10:16:38,576 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 10:25:25,004 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 10:25:25,007 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 14:32:46,506 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ADD COLUMN "invitation_message" text, ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 14:32:46,513 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 14:33:08,275 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 14:33:08,276 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 14:35:02,743 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 14:35:02,745 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 15:10:58,478 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 15:10:58,480 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");
+2025-09-26 15:31:57,984 WARNING database DDL Query made to DB:
+ALTER TABLE "tabMeeting" ALTER COLUMN "from_time" TYPE time(6) , ALTER COLUMN "to_time" TYPE time(6)
+2025-09-26 15:31:57,989 WARNING database DDL Query made to DB:
+CREATE INDEX IF NOT EXISTS "status" ON "tabMeeting"("status");

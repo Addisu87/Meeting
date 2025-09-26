@@ -105,3 +105,225 @@
 2025-09-24 19:07:34,815 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
 2025-09-24 19:07:34,821 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
 2025-09-24 19:07:34,822 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 09:01:56,735 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 09:01:58,951 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 09:01:59,060 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 09:01:59,165 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 09:01:59,168 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-25 09:04:44,105 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 09:04:48,660 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 09:04:48,764 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-25 09:04:48,805 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 09:04:48,898 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 09:52:13,249 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 09:52:14,899 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 09:52:14,911 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-25 09:52:14,986 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 09:52:14,987 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 11:38:23,622 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench set-config -g developer_mode true
+2025-09-25 11:38:29,011 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 11:38:30,601 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 11:38:30,630 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 11:38:30,640 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 11:38:30,644 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-25 12:23:17,863 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost mysql
+2025-09-25 12:23:50,815 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost psql
+2025-09-25 12:41:05,208 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 12:41:06,431 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 12:41:06,441 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-25 12:41:06,463 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 12:41:06,522 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 14:42:50,890 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-25 14:42:53,110 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-25 14:42:53,126 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-25 14:42:53,130 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-25 14:42:53,144 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 10:00:22,623 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 10:00:24,692 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 10:00:24,698 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 10:00:24,719 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 10:00:24,720 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 10:02:08,145 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 10:02:12,493 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 10:02:12,804 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 10:02:12,808 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 10:02:12,824 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 13:44:09,487 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 13:44:11,687 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 13:44:11,760 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 13:44:11,764 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 13:44:11,817 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 15:30:44,944 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost console
+2025-09-26 15:31:05,954 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute import frappe; errors = frappe.get_all("Email Queue", filters={"status": "Error"}, fields=["name", "error"]); [print(f"Email Queue: {error.name}, Error: {error.error}") for error in errors]
+2025-09-26 15:31:35,813 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute import frappe; print(frappe.get_all("Email Queue", filters={"status": "Error"}, fields=["name", "error"]))
+2025-09-26 15:53:09,834 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute import frappe; print(frappe.db.get_value("Email Account", {"default_outgoing": 1}, "name"))
+2025-09-26 15:55:39,147 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute -f apps/meeting/check_email.py
+2025-09-26 15:55:47,822 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute meeting.check_email.check_email_config
+2025-09-26 15:56:03,528 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute meeting.meeting.check_email.check_email_config
+2025-09-26 15:56:20,494 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute import frappe
+
+def check_email_config():
+    default_outgoing = frappe.db.get_value("Email Account", {"default_outgoing": 1}, "name")
+    if not default_outgoing:
+        print("No default outgoing email account found.")
+    else:
+        print(f"Default outgoing email account: {default_outgoing}")
+
+    errors = frappe.get_all("Email Queue", filters={"status": "Error"}, fields=["name", "error"])
+    if errors:
+        for error in errors:
+            print(f"Email Queue: {error.name}, Error: {error.error}")
+    else:
+        print("No errors found in Email Queue.")
+
+check_email_config()
+2025-09-26 16:06:23,063 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:06:26,459 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:06:35,886 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:06:57,852 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:06:59,219 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:06:59,320 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:06:59,366 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:06:59,397 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:08:23,141 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:08:48,673 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:09:34,130 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:10:15,330 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:12:10,054 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:12:11,653 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:12:11,731 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:12:11,759 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:12:11,803 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:12:32,225 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:12:33,615 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:12:33,651 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:12:33,659 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:12:33,723 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:14:23,648 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:14:25,013 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:14:25,013 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:14:25,060 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:14:30,499 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:14:50,211 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:14:51,669 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:14:51,700 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:14:51,739 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:14:56,582 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:15:15,575 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:15:16,706 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:15:16,709 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:15:16,722 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:15:21,867 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:15:56,078 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:15:57,310 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:15:57,344 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:15:57,360 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:16:02,434 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:16:50,616 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:16:51,843 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:16:51,852 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:16:51,929 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:17:03,087 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:18:01,143 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:18:11,192 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule -h
+2025-09-26 16:18:22,194 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule --help
+2025-09-26 16:23:07,443 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:23:08,867 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:23:08,869 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:23:08,897 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:23:08,944 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:42:40,826 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench restart
+2025-09-26 16:42:49,104 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:42:50,517 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:42:50,615 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:42:50,633 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:42:50,696 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:45:19,008 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:47:14,513 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:47:16,377 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 16:47:16,377 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 16:47:16,465 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 16:47:16,515 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 16:47:17,881 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 16:58:11,368 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:07:19,291 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:07:22,352 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 17:07:22,439 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 17:07:22,577 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 17:07:22,579 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 17:20:32,232 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:26:17,112 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:27:03,058 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:27:04,335 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 17:27:04,356 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 17:27:04,361 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 17:27:04,496 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 17:28:55,424 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:28:56,677 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 17:28:56,681 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 17:28:56,683 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 17:28:56,744 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 17:30:04,911 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 17:30:06,561 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 17:30:06,739 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 17:30:06,770 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 17:30:06,779 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 18:17:27,333 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench build
+2025-09-26 18:18:41,908 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench build
+2025-09-26 18:20:21,598 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench clear-cache
+2025-09-26 18:20:41,921 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench clear-cache --site meeting.localhost
+2025-09-26 18:21:00,404 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench clear-cache --help
+2025-09-26 18:21:13,281 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench clear-cache
+2025-09-26 18:21:26,108 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost clear-cache
+2025-09-26 18:32:22,922 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench migrate
+2025-09-26 18:33:03,489 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench migrate --site meeting.localhost
+2025-09-26 18:33:26,902 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost migrate
+2025-09-26 18:33:42,841 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 18:33:44,675 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 18:33:44,753 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 18:33:44,856 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 18:33:44,858 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 18:37:34,892 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 18:37:37,020 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 18:37:48,201 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench stop
+2025-09-26 18:38:21,543 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 18:38:23,471 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 18:38:23,485 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 18:38:23,499 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 18:38:23,838 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 19:29:12,310 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 19:29:17,065 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 19:29:17,113 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 19:29:17,146 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 19:29:17,156 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 20:02:53,272 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:04:39,676 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:13:31,644 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:14:05,962 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:14:09,057 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 20:14:09,058 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 20:14:09,060 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 20:14:09,138 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 20:15:11,315 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:16:11,655 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:17:14,969 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:19:11,787 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:19:46,376 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:19:52,272 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench stop
+2025-09-26 20:19:58,270 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:20:11,795 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:22:47,734 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench stop
+2025-09-26 20:22:55,915 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:23:24,960 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:23:26,285 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 20:23:26,306 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 20:23:26,313 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 20:23:26,350 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 20:33:20,201 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-26 20:33:22,163 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-26 20:33:22,174 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-26 20:33:22,347 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-26 20:33:22,474 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-26 20:44:02,954 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench execute frappe.email.queue.flush
+2025-09-26 20:44:12,856 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute frappe.email.queue.flush
+2025-09-26 20:44:23,750 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute frappe.get_all --kwargs {"doctype":"Email Queue","fields":["name","status","sender","recipients","creation"],"limit_page_length":5,"order_by":"creation desc"}

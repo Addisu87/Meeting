@@ -1,0 +1,714 @@
+2025-09-25 09:02:20,067 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x100f24e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x100f24e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-25 09:02:20,132 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x100f24e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x100f24e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-25 12:59:29,948 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'doc': '{"name":"Minutees","owner":"Administrator","creation":"2025-09-25 12:49:20.635838","modified":"2025-09-25 12:49:20.635838","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"","allow_rename":1,"module":"Meeting","is_submittable":0,"istable":1,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":1,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":0,"track_changes":0,"track_seen":0,"track_views":0,"custom":0,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"name":"8a6be4bft6","owner":"Administrator","creation":"2025-09-25 12:49:20.635838","modified":"2025-09-25 12:49:20.635838","modified_by":"Administrator","docstatus":0,"idx":1,"fieldtype":"Section Break","fieldname":"section_break_pvss","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Minutees","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-rmtpxbfaxa","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Data","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Minutees","parentfield":"fields","parenttype":"DocType","idx":2,"__unedited":false,"label":"Action"},{"docstatus":0,"doctype":"DocField","name":"new-docfield-ovaeoxgptr","__islocal":1,"__unsaved":1,"owner":"Administrator","fieldtype":"Link","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":1,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Minutees","parentfield":"fields","parenttype":"DocType","idx":3,"__unedited":false,"label":"Assigned To"}],"permissions":[],"actions":[],"links":[],"states":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-09-25 16:36:49,884 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'doc': '{"name":"Meeting","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"Expression","autoname":"format:Meeting-{#####}","title_field":"title","allow_rename":1,"module":"Meeting","is_submittable":0,"istable":0,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":0,"track_changes":0,"track_seen":0,"track_views":0,"custom":0,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"name":"4h5ok072i5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":1,"label":"Title","fieldtype":"Data","fieldname":"title","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqfo1dba2","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":2,"label":"Date","fieldtype":"Date","fieldname":"date","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"lrjtff3rt8","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":3,"fieldtype":"Column Break","fieldname":"column_break_gweh","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqpaeb8r5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":4,"label":"From Time ","fieldtype":"Time","fieldname":"from_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kq8ap7opm","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":5,"label":"To Time","fieldtype":"Time","fieldname":"to_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqunvu3r4","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":6,"label":"Status","fieldtype":"Select","fieldname":"status","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":1,"not_nullable":0,"options":"Planned\\nIn Progress\\nCompleted\\nCancelled","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"qqk2lg46ua","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":7,"label":"Agenda","fieldtype":"Section Break","fieldname":"section_break_uu0k","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"j4a3ukj20j","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":8,"label":"Agenda","fieldtype":"Table","fieldname":"agenda","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Agenda","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"akascgau0g","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":9,"label":"Minutes","fieldtype":"Section Break","fieldname":"section_break_oxky","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"abmsr3laod","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":10,"label":"Minutes","fieldtype":"Table","fieldname":"minutes","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Minutes","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"}],"permissions":[{"name":"qqkakd68v0","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":1,"role":"System Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"name":"4h5qp5s6g5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:32:59.824518","modified_by":"Administrator","docstatus":0,"idx":2,"role":"Meeting Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"}],"actions":[],"links":[],"states":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-09-25 16:53:51,291 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'doc': '{"name":"Meeting","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"Expression","autoname":"format:Meeting-{#####}","title_field":"title","allow_rename":1,"module":"Meeting","is_submittable":0,"istable":0,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":0,"track_changes":0,"track_seen":0,"track_views":0,"custom":0,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"name":"4h5ok072i5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":1,"label":"Title","fieldtype":"Data","fieldname":"title","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqfo1dba2","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":2,"label":"Date","fieldtype":"Date","fieldname":"date","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqpaeb8r5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":3,"label":"From Time ","fieldtype":"Time","fieldname":"from_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kq8ap7opm","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":4,"label":"To Time","fieldtype":"Time","fieldname":"to_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqunvu3r4","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":5,"label":"Status","fieldtype":"Select","fieldname":"status","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":1,"not_nullable":0,"options":"Planned\\nIn Progress\\nCompleted\\nCancelled","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"qqk2lg46ua","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":6,"label":"Agenda","fieldtype":"Section Break","fieldname":"section_break_uu0k","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"j4a3ukj20j","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":7,"label":"Agenda","fieldtype":"Table","fieldname":"agenda","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Agenda","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"akascgau0g","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":8,"label":"Minutes","fieldtype":"Section Break","fieldname":"section_break_oxky","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"abmsr3laod","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":9,"label":"Minutes","fieldtype":"Table","fieldname":"minutes","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Minutes","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"docstatus":0,"doctype":"DocField","name":"lqc4naccge","__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","idx":10,"label":"Attendees","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","fieldname":"attendees_section","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"jsb2j3j4qt","__unsaved":1,"owner":"Administrator","fieldtype":"Table","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","idx":11,"label":"Attendees","options":"Meeting Attendee","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","fieldname":"attendees","length":0,"columns":0}],"permissions":[{"name":"qqkakd68v0","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":1,"role":"System Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"name":"4h5qp5s6g5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":2,"role":"Meeting Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"}],"actions":[],"links":[],"states":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-09-25 16:53:56,584 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'doc': '{"name":"Meeting","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":0,"read_only":0,"in_create":0,"protect_attached_files":0,"naming_rule":"Expression","autoname":"format:Meeting-{#####}","title_field":"title","allow_rename":1,"module":"Meeting","is_submittable":0,"istable":0,"issingle":0,"is_tree":0,"is_calendar_and_gantt":0,"editable_grid":0,"quick_entry":0,"grid_page_length":50,"rows_threshold_for_grid_search":0,"track_changes":0,"track_seen":0,"track_views":0,"custom":0,"beta":0,"is_virtual":0,"queue_in_background":0,"max_attachments":0,"hide_toolbar":0,"allow_copy":0,"allow_import":0,"allow_events_in_timeline":0,"allow_auto_repeat":0,"make_attachments_public":0,"show_title_field_in_link":0,"translated_doctype":0,"sort_field":"creation","sort_order":"DESC","force_re_route_to_default_view":0,"document_type":"","show_preview_popup":0,"show_name_in_global_search":0,"email_append_to":0,"has_web_view":0,"allow_guest_to_view":0,"index_web_pages_for_search":1,"engine":"InnoDB","row_format":"Dynamic","doctype":"DocType","fields":[{"name":"4h5ok072i5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":1,"label":"Title","fieldtype":"Data","fieldname":"title","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqfo1dba2","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":2,"label":"Date","fieldtype":"Date","fieldname":"date","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqpaeb8r5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":3,"label":"From Time ","fieldtype":"Time","fieldname":"from_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kq8ap7opm","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":4,"label":"To Time","fieldtype":"Time","fieldname":"to_time","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"5kqunvu3r4","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":5,"label":"Status","fieldtype":"Select","fieldname":"status","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":1,"is_virtual":0,"search_index":1,"not_nullable":0,"options":"Planned\\nIn Progress\\nCompleted\\nCancelled","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":1,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"qqk2lg46ua","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":6,"label":"Agenda","fieldtype":"Section Break","fieldname":"section_break_uu0k","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"j4a3ukj20j","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":7,"label":"Agenda","fieldtype":"Table","fieldname":"agenda","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Agenda","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"akascgau0g","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":8,"label":"Minutes","fieldtype":"Section Break","fieldname":"section_break_oxky","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"name":"abmsr3laod","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":9,"label":"Minutes","fieldtype":"Table","fieldname":"minutes","length":0,"precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"options":"Meeting Minutes","sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"columns":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","doctype":"DocField"},{"docstatus":0,"doctype":"DocField","name":"lqc4naccge","__unsaved":1,"owner":"Administrator","fieldtype":"Section Break","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","idx":10,"label":"Attendees","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","fieldname":"attendees_section","length":0,"columns":0},{"docstatus":0,"doctype":"DocField","name":"jsb2j3j4qt","__unsaved":1,"owner":"Administrator","fieldtype":"Table","precision":"","non_negative":0,"hide_days":0,"hide_seconds":0,"reqd":0,"is_virtual":0,"search_index":0,"not_nullable":0,"sort_options":0,"show_dashboard":0,"fetch_if_empty":0,"hidden":0,"show_on_timeline":0,"bold":0,"allow_in_quick_entry":0,"translatable":0,"print_hide":0,"print_hide_if_no_value":0,"report_hide":0,"collapsible":0,"hide_border":0,"in_list_view":0,"in_standard_filter":0,"in_preview":0,"sticky":0,"in_filter":0,"in_global_search":0,"read_only":0,"allow_on_submit":0,"ignore_user_permissions":0,"allow_bulk_edit":0,"make_attachment_public":0,"permlevel":0,"ignore_xss_filter":0,"unique":0,"no_copy":0,"set_only_once":0,"remember_last_selected_value":0,"parent":"Meeting","parentfield":"fields","parenttype":"DocType","idx":11,"label":"Attendees","options":"Meeting Attendee","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","fieldname":"attendees","length":0,"columns":0}],"permissions":[{"name":"qqkakd68v0","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":1,"role":"System Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"},{"name":"4h5qp5s6g5","owner":"Administrator","creation":"2025-09-25 11:31:42.785239","modified":"2025-09-25 16:50:50.768558","modified_by":"Administrator","docstatus":0,"idx":2,"role":"Meeting Manager","if_owner":0,"permlevel":0,"select":0,"read":1,"write":1,"create":1,"delete":1,"submit":0,"cancel":0,"amend":0,"report":1,"export":1,"import":0,"share":1,"print":1,"email":1,"parent":"Meeting","parentfield":"permissions","parenttype":"DocType","doctype":"DocPerm"}],"actions":[],"links":[],"states":[],"__unsaved":1}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2025-09-26 10:00:39,023 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-26 10:00:39,067 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-26 10:00:39,264 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-26 10:00:39,284 ERROR frappe Unable to load translations
+Site: meeting.localhost
+Form Dict: {}
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 208, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 1036, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x104b70e50>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 174, in get_all_translations
+    return frappe.cache.hget(MERGED_TRANSLATION_KEY, lang, generator=_merge_translations)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 253, in hget
+    value = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 162, in _merge_translations
+    all_translations.update(get_translations_from_apps(lang))
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/translate.py", line 189, in get_translations_from_apps
+    for app in apps or frappe.get_installed_apps(_ensure_on_bench=True):
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/__init__.py", line 916, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1144, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1148, in get_default
+    d = self.get_defaults(key, parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 1164, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 248, in sql
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 178, in connect
+    super().connect()
+    ~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 146, in connect
+    self.get_connection()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 194, in get_connection
+    conn = psycopg2.connect(**conn_settings)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "localhost" (::1), port 5432 failed: FATAL:  role "meetingdb" does not exist
+
+2025-09-26 11:12:08,015 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'attendee': 'addisu.haile@yahoo.com', 'cmd': 'meeting.meeting.doctype.meeting.meeting.get_full_name'}
+2025-09-26 14:09:07,950 ERROR frappe New Exception collected in error log
+Site: meeting.localhost
+Form Dict: {'attendee': 'addisu.haile@yahoo.com', 'cmd': 'meeting.meeting.doctype.meeting.meeting.get_full_name'}

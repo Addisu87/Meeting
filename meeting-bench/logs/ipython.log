@@ -8,3 +8,5 @@ frappe.get_doc("User", "Administrator").save()
 frappe.db.commit()
 exit()
 2025-09-24 19:03:45,915 INFO ipython === session end ===
+2025-09-26 15:30:47,724 INFO ipython === bench console session ===
+2025-09-26 15:30:47,726 INFO ipython === session end ===

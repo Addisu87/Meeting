@@ -1,0 +1,1097 @@
+2025-09-26 16:12:05,878 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1536, in get_connection
+    if connection.can_read() and self.cache is None:
+       ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 622, in can_read
+    return self._parser.can_read(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 99, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 110, in read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1540, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-26 16:20:00,580 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 622, in can_read
+    return self._parser.can_read(timeout)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 99, in can_read
+    return self.read_from_socket(timeout=timeout, raise_on_timeout=False)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/_parsers/hiredis.py", line 108, in read_from_socket
+    bufflen = self._sock.recv_into(self._buffer)
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1536, in get_connection
+    if connection.can_read() and self.cache is None:
+       ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 625, in can_read
+    raise ConnectionError(f"Error while reading from {host_error}: {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:11000: (54, 'Connection reset by peer')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 385, in connect_check_health
+    sock = self.retry.call_with_retry(
+        lambda: self._connect(), lambda error: self.disconnect(error)
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/retry.py", line 87, in call_with_retry
+    return do()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 386, in <lambda>
+    lambda: self._connect(), lambda error: self.disconnect(error)
+            ~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 797, in _connect
+    raise err
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 781, in _connect
+    sock.connect(socket_address)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 120, in enqueue_events_for_site
+    enqueue_events()
+    ~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 140, in enqueue_events
+    if job_type.enqueue():
+       ~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 74, in enqueue
+    if not self.is_job_in_queue():
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/scheduled_job_type/scheduled_job_type.py", line 96, in is_job_in_queue
+    return is_job_enqueued(self.rq_job_id)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 665, in is_job_enqueued
+    return get_job_status(job_id) in (JobStatus.QUEUED, JobStatus.STARTED)
+           ~~~~~~~~~~~~~~^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 670, in get_job_status
+    if job := get_job(job_id):
+              ~~~~~~~^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/background_jobs.py", line 676, in get_job
+    return Job.fetch(create_job_id(job_id), connection=get_redis_conn())
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/job.py", line 674, in fetch
+    job.refresh()
+    ~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/rq/job.py", line 1037, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/commands/core.py", line 4959, in hgetall
+    return self.execute_command("HGETALL", name, keys=[name])
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 1540, in get_connection
+    connection.connect()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/env/lib/python3.13/site-packages/redis/connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to 127.0.0.1:11000. Connection refused.
+2025-09-26 16:24:04,244 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for meeting.localhost
+2025-09-26 16:24:04,250 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for meeting.localhost
+2025-09-26 16:24:04,252 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for meeting.localhost
+2025-09-26 16:24:04,255 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for meeting.localhost
+2025-09-26 16:24:04,258 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for meeting.localhost
+2025-09-26 16:24:04,261 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for meeting.localhost
+2025-09-26 16:28:00,770 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for meeting.localhost
+2025-09-26 16:28:00,777 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for meeting.localhost
+2025-09-26 16:28:00,782 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for meeting.localhost
+2025-09-26 16:28:00,784 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for meeting.localhost
+2025-09-26 16:28:00,787 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,034 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,041 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,044 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,046 ERROR scheduler Skipped queueing frappe.search.sqlite_search.build_index_if_not_exists because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,048 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,051 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,055 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,059 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,061 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,066 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,070 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,072 ERROR scheduler Skipped queueing frappe.pulse.client.send_queued_events because it was found in queue for meeting.localhost
+2025-09-26 16:36:01,077 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,953 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,956 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,958 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,960 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,966 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for meeting.localhost
+2025-09-26 16:40:00,969 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for meeting.localhost
+2025-09-26 16:44:00,490 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 125, in get_doc_str
+    return controller(doctype, name, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 221, in load_from_db
+    if not is_doctype and self.meta.issingle:
+                          ^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/functools.py", line 1037, in __get__
+    val = self.func(instance)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 222, in meta
+    return frappe.get_meta(self.doctype)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 89, in get_meta
+    meta = Meta(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 152, in __init__
+    super().__init__("DocType", doctype)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 158, in load_from_db
+    super().load_from_db()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 248, in load_from_db
+    d = frappe.db.get_value(
+    	doctype=self.doctype,
+    ...<3 lines>...
+    	as_dict=True,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 293, in sql
+    traceback.print_stack()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 239, in print_stack
+    print_list(extract_stack(f, limit=limit), file=file)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 31, in print_list
+    print(item, file=file, end="")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+2025-09-26 16:44:00,517 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 16:48:00,636 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 125, in get_doc_str
+    return controller(doctype, name, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 221, in load_from_db
+    if not is_doctype and self.meta.issingle:
+                          ^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/functools.py", line 1037, in __get__
+    val = self.func(instance)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 222, in meta
+    return frappe.get_meta(self.doctype)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 89, in get_meta
+    meta = Meta(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 152, in __init__
+    super().__init__("DocType", doctype)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 158, in load_from_db
+    super().load_from_db()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 248, in load_from_db
+    d = frappe.db.get_value(
+    	doctype=self.doctype,
+    ...<3 lines>...
+    	as_dict=True,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    def sql(self, query, values=EmptyQueryValues, *args, **kwargs):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 293, in sql
+    traceback.print_stack()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 239, in print_stack
+    print_list(extract_stack(f, limit=limit), file=file)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 31, in print_list
+    print(item, file=file, end="")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+2025-09-26 16:48:00,904 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 16:52:00,797 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 125, in get_doc_str
+    return controller(doctype, name, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 221, in load_from_db
+    if not is_doctype and self.meta.issingle:
+                          ^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/functools.py", line 1037, in __get__
+    val = self.func(instance)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 222, in meta
+    return frappe.get_meta(self.doctype)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 89, in get_meta
+    meta = Meta(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 152, in __init__
+    super().__init__("DocType", doctype)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 158, in load_from_db
+    super().load_from_db()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 248, in load_from_db
+    d = frappe.db.get_value(
+    	doctype=self.doctype,
+    ...<3 lines>...
+    	as_dict=True,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    def sql(self, query, values=EmptyQueryValues, *args, **kwargs):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 293, in sql
+    traceback.print_stack()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 239, in print_stack
+    print_list(extract_stack(f, limit=limit), file=file)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 31, in print_list
+    print(item, file=file, end="")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+2025-09-26 16:52:00,986 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 16:56:00,951 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 125, in get_doc_str
+    return controller(doctype, name, **kwargs)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 221, in load_from_db
+    if not is_doctype and self.meta.issingle:
+                          ^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/functools.py", line 1037, in __get__
+    val = self.func(instance)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 222, in meta
+    return frappe.get_meta(self.doctype)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 89, in get_meta
+    meta = Meta(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 152, in __init__
+    super().__init__("DocType", doctype)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 189, in __init__
+    self.load_from_db()
+    ~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/meta.py", line 158, in load_from_db
+    super().load_from_db()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 248, in load_from_db
+    d = frappe.db.get_value(
+    	doctype=self.doctype,
+    ...<3 lines>...
+    	as_dict=True,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 233, in sql
+    def sql(self, query, values=EmptyQueryValues, *args, **kwargs):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 293, in sql
+    traceback.print_stack()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 239, in print_stack
+    print_list(extract_stack(f, limit=limit), file=file)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/.pyenv/versions/3.13.0/lib/python3.13/traceback.py", line 31, in print_list
+    print(item, file=file, end="")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
+2025-09-26 16:56:01,062 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:08:01,642 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:12:00,789 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:16:00,917 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:20:01,236 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:24:00,456 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 17:28:01,290 ERROR scheduler Exception in Enqueue Events for Site meeting.localhost
+Traceback (most recent call last):
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 232, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/utils/__init__.py", line 218, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/document.py", line 123, in get_doc_str
+    controller = get_controller(doctype)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 101, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/model/base_document.py", line 112, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 554, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    out = query.run(as_dict=as_dict, debug=debug, update=update, run=run, pluck=pluck)
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/query_builder/utils.py", line 85, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/postgres/database.py", line 234, in sql
+    return super().sql(modify_query(query), modify_values(values), *args, **kwargs)
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 271, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/addisutedla/Documents/Projects/Meeting/meeting-bench/apps/frappe/frappe/database/database.py", line 365, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+psycopg2.errors.InsufficientPrivilege: permission denied for table tabDocType
+
+2025-09-26 19:36:01,801 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for meeting.localhost
+2025-09-26 19:36:01,842 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for meeting.localhost
+2025-09-26 19:36:01,940 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for meeting.localhost
+2025-09-26 19:36:01,948 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for meeting.localhost
+2025-09-26 19:36:02,012 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for meeting.localhost
+2025-09-26 19:36:02,025 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for meeting.localhost
+2025-09-26 19:36:02,058 ERROR scheduler Skipped queueing frappe.desk.utils.delete_old_exported_report_files because it was found in queue for meeting.localhost
+2025-09-26 19:36:02,063 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for meeting.localhost
