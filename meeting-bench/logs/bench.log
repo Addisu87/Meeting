@@ -327,3 +327,49 @@ check_email_config()
 2025-09-26 20:44:02,954 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench execute frappe.email.queue.flush
 2025-09-26 20:44:12,856 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute frappe.email.queue.flush
 2025-09-26 20:44:23,750 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost execute frappe.get_all --kwargs {"doctype":"Email Queue","fields":["name","status","sender","recipients","creation"],"limit_page_length":5,"order_by":"creation desc"}
+2025-09-27 09:21:52,421 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-27 09:21:57,367 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-27 09:21:57,663 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-27 09:21:57,859 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-27 09:21:57,863 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-27 09:31:52,027 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-27 09:31:55,521 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-27 09:31:55,542 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-27 09:31:55,583 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-27 09:31:55,612 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-27 15:02:26,555 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-27 15:02:29,804 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-27 15:02:29,821 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-27 15:02:29,917 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-27 15:02:29,920 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-27 15:43:41,486 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-27 15:43:42,828 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-27 15:43:42,834 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-27 15:43:42,842 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-27 15:43:42,844 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-27 16:14:30,880 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench start
+2025-09-27 16:14:32,932 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench schedule
+2025-09-27 16:14:33,001 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench worker
+2025-09-27 16:14:33,033 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench watch
+2025-09-27 16:14:33,050 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench serve --port 8000
+2025-09-27 16:16:47,119 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests
+2025-09-27 16:16:57,780 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost set-config allow_tests true
+2025-09-27 16:17:09,407 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests
+2025-09-27 16:26:21,086 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting
+2025-09-27 16:34:20,958 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --version
+2025-09-27 16:34:35,750 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:36:19,027 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:37:06,748 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:39:13,402 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:39:42,416 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:40:30,002 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:43:10,649 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:45:59,143 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:47:48,214 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:49:03,249 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting
+2025-09-27 16:50:15,148 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:51:46,991 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:53:08,341 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:54:55,521 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:57:38,148 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting --doctype Meeting
+2025-09-27 16:59:15,804 INFO /Library/Frameworks/Python.framework/Versions/3.13/bin/bench --site meeting.localhost run-tests --app meeting

@@ -1,6 +1,6 @@
 {
- "admin_password": "Addisu@87",
- "auto_email_id": "addisuhaile87@gmail.com",
+ "admin_password": "Admin@87",
+ "allow_tests": true,
  "db_host": "localhost",
  "db_name": "meetingdb",
  "db_password": "meeting87",
@@ -8,10 +8,5 @@
  "db_type": "postgres",
  "db_user": "postgres",
  "developer_mode": 1,
- "email_sender_name": "Addisu",
- "encryption_key": "2yXreswl0rO5OncI8dYdLwQMaSUYHVheBlrbh9vj4xI=",
- "host_name": "http://meeting.localhost:8000",
- "mail_password": "Addisu@87",
- "mail_port": 587,
- "mail_server": "smtp.gmail.com"
+ "host_name": "http://meeting.localhost:8000"
 }
